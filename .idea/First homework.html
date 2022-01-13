@@ -56,7 +56,7 @@
         let name = prompt("What is your name?", "Carl");
         let mail = prompt("What is your mail?", "carl@gmail.com");
         let password = prompt("What is your password?", "qwerty");
-        alert ('Dear', name, ', your e-mail is', mail, ', and your password is ', password);
+        alert ('Dear' + (name) + ', your e-mail is' + (mail) + ', and your password is ' + (password));
     </script>
 
     <h1>Task #8</h1>
@@ -64,21 +64,21 @@
     <!--How much seconds are in the hour-->
     <script>
         let hour = 60*60;
-        alert ('There are ', hour, 'seconds in the hour');
+        alert ('There are ' + (hour) + 'seconds in the hour');
     </script>
 
     <!--How much seconds are in the day-->
 
     <script>
         let day = 24*hour;
-        alert ('There are ', day, 'seconds in the day');
+        alert ('There are ' + (day) + 'seconds in the day');
     </script>
 
     <!--How much seconds are in the month-->
     <script>
         let month = prompt("How much are days in your month?", "28");
         let numberInMonth = month*day;
-        alert ('There are ', numberInMonth, 'seconds in your month')
+        alert ('There are ' + (numberInMonth) + 'seconds in your month')
     </script>
 </body>
 </html>
