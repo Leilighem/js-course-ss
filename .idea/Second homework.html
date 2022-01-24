@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Second task</title>
+</head>
+<body>
+<!--Second homework-->
+<!--Task #1-->
+
+<script>
+    let x = 1;
+    let y = 2;
+
+    let res1 = "" + x + y;// Допишіть код, необхідно використовувати змінні x і y
+    console.log(res1); // "12"
+    console.log(typeof res1); // "string"
+
+    let res2 = !!x + "" + y;// Допишіть код, необхідно використовувати змінні x і y
+    console.log(res2); // "true2"
+    console.log(typeof res2); // "string"
+
+    let res3 = !!x == !!y; // Допишіть код, необхідно використовувати змінні x і y
+    console.log(res3); // true
+    console.log(typeof res3); // "boolean"
+
+    let res4 = parseFloat(!!y);// Допишіть код, необхідно використовувати змінні x і y
+    console.log(res4); // NaN
+    console.log(typeof res4); // "number"
+</script>
+
+<!--Task #2-->
+
+<script>
+    let number = prompt("Enter your number", "7");
+    let resOne = number % 7;
+    let resTwo = number % 2;
+
+    if (resOne === 0 && resTwo === 0 && number > 0) {
+        console.log("Your number can be divided by 7 and 2 without a reminder");
+    }
+    else if (resTwo === 0 && number > 0) {
+        console.log("Your number can be divided by 2 without a reminder");
+    }
+    else if (resOne === 0) {
+        console.log("Your number can be divided by 7 without a reminder");
+    }
+    else {
+        console.log("Your number can't be divided by 2 or 7 without a reminder");
+    }
+</script>
+
+<!--Task #3-->
+
+<script>
+    const arr = [];
+
+    arr.push(7, 'String', true, null);
+    //console.log(arr)
+    console.log(arr.length);
+
+    arr[4] = prompt("Enter your value", "Please, enter a number or a word or whatever");
+    alert ('Dear user, your value is ' + (arr[4]) + '.');
+
+    arr.shift();
+    console.log(arr)
+</script>
+
+<!--Task #4-->
+
+<script>
+    let cities = ["Rome", "Lviv", "Warsaw"];
+    console.log(cities.join('*'));
+</script>
+
+
+<!--Task #5-->
+
+<script>
+    let age = prompt("Enter your age", "18");
+
+    if (age < 18) {
+        alert ('Dear user, your age is ' + (age) + ', and your are underage.');
+    }
+    else if (age >= 18) {
+        alert ('Dear user, your age is ' + (age) + ', and your are adult.');
+    }
+    else {
+        alert ('Please, enter the correct number.');
+    }
+</script>
+
+<!--Task #6-->
+
+<script>
+    let a = parseInt(prompt("Enter the side A", "5"), 10);
+    let b = parseInt(prompt("Enter the side B", "3"), 10);
+    let c = parseInt(prompt("Enter the side C", "7"), 10);
+    //console.log(typeof a, typeof b, typeof c)
+
+    //Here we are cheching an area of a triangle
+    if (a > 0 && b > 0 && c > 0) {
+        let p = (a + b + c) / 2;
+        let s = Math.sqrt(p * (p - a) * (p - b) * (p - c));
+        console.log(s.toFixed(3));
+    }
+    //Here is a check if input data is a number
+    else {
+        console.log('Please, enter the correct number.');
+    }
+
+    //Here we are checking if the triangle is right angled
+    if (a*a + b*b === c*c || b*b + c*c === a*a || c*c + a*a === b*b){
+        console.log('Your triangle is right angled.');
+    }
+    else {
+        console.log('Your triangle is not a right angled or the data is incorrect.');
+    }
+</script>
+
+<!--Task #7-->
+<script>
+    let currentDate = new Date();
+    let currentTime = currentDate.getHours();
+
+    //let currentTime = parseInt(prompt("Enter your time", "23"), 10);
+    if (currentTime >= 23 || currentTime <= 5) {
+        alert('Доброй ночи!');
+        console.log(currentTime);
+    }
+    else if (currentTime >= 6 && currentTime <= 11) {
+        alert('Доброго утра!');
+        console.log(currentTime);
+    }
+    else if (currentTime >= 12 && currentTime <= 17) {
+        alert('Доброго дня!');
+        console.log(currentTime);
+    }
+    else if (currentTime >= 18 && currentTime <= 22){
+        alert('Доброго вечера!');
+        console.log(currentTime);
+    }
+
+</script>
+</body>
+</html>
