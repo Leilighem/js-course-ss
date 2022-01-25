@@ -123,6 +123,7 @@
     let currentTime = currentDate.getHours();
 
     //let currentTime = parseInt(prompt("Enter your time", "23"), 10);
+    //#1
     if (currentTime >= 23 || currentTime <= 5) {
         alert('Доброй ночи!');
         console.log(currentTime);
@@ -138,6 +139,26 @@
     else if (currentTime >= 18 && currentTime <= 22){
         alert('Доброго вечера!');
         console.log(currentTime);
+    }
+
+    //#2
+    switch (true) {
+        case (currentTime >= 23 || currentTime <= 5):
+            alert('Доброй ночи!');
+            //console.log(currentTime);
+            break;
+        case (currentTime >= 6 && currentTime <= 11):
+            alert('Доброго утра!');
+            //console.log(currentTime);
+            break;
+        case (currentTime >= 12 && currentTime <= 17):
+            alert('Доброго дня!');
+            //console.log(currentTime);
+            break;
+        case (currentTime >= 18 && currentTime <= 22):
+            alert('Доброго вечера!');
+            //console.log(currentTime);
+            break;
     }
 
 </script>
