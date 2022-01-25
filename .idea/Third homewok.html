@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Third task</title>
+</head>
+<body>
+<!--Third homework-->
+<!--Task #1-->
+
+<script>
+    //Цикл for
+    let array = [2, 3, 4, 5];
+    let arrLong = array.length;
+    let total = 1;
+
+    for (let i = 0; i < arrLong; ++i) {
+        total *= array[i];
+    }
+    console.log(total);
+
+    //Цикл while
+
+    let i = 0;
+    let total2 = 1;
+    while (i < arrLong) {
+        total2 *= array[i];
+        i++;
+    }
+    console.log(total2);
+</script>
+
+<!--Task #2-->
+
+<script>
+    for (let i = 0; i<16; i++) {
+        let result = i % 2;
+
+        if (result === 0) {
+            console.log(i + " number is even");
+        }
+        else if (result !== 0) {
+            console.log(i + " number is odd");
+        }
+        continue;
+    }
+</script>
+
+<!--Task #3-->
+
+<script>
+    function randomArray(length, max) {
+        return Array.apply(null, Array(length)).map(function() {
+            return Math.round(Math.random() * max);
+        });
+    }
+    console.log(randomArray(5, 500));
+</script>
+
+<!--Task #4-->
+
+<script>
+    function arrMin(...args) {
+        const arr = (args);
+        const min = arr.reduce((a, b) => Math.min(a, b));
+        console.log(min);
+        //console.log(args)
+    }
+    //An example, the result will be -77
+    arrMin(14, 58, 20, -77, 66, 82, -42, 67, 42, -4);
+</script>
+
+<!--Task #5-->
+
+<script>
+//вернусь позже
+</script>
+
+<!--Task #6-->
+
+<script>
+    function arrLast(args, b) {
+        const arr = (args);
+        console.log(arr);
+        a = arr.length - b;
+        console.log(a);
+        for (let i = 0; i< arrLong; ++i) {
+            result = arr[a];
+            console.log(result);
+        }
+    }
+</script>
+
+<!--Task #7-->
+
+<script>
+</script>
+
+</body>
+</html>
