@@ -73,19 +73,42 @@
 <!--Task #5-->
 
 <script>
-//вернусь позже
+    function findUnique(arr) {
+        for (let i = 0; i < arr.length; i++) {
+            for (let copyArr = (i + 1); copyArr < arr.length; copyArr++) {
+                if (arr[i] === arr[copyArr]) {
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
 </script>
 
 <!--Task #6-->
 
 <script>
- //вернусь позже
+    function lastEl(arr, b = 1) {
+        console.log(arr.slice(-b))
+    }
 </script>
 
 <!--Task #7-->
 
 <script>
-    // вернусь позже
+    function capitalizeFirstLetter(sentence) {
+        let arr = sentence.split(' ');
+        let copyArr = [];
+        //console.log(arr)
+
+        for (let i = 0; i < arr.length; i++) {
+            copyArr.push(arr[i].charAt(0).toUpperCase()+ arr[i].slice(1));
+            //console.log(copyArr)
+        }
+        return copyArr.join(' ');
+    }
+
+    console.log(capitalizeFirstLetter('apollo 11 was launched by a saturn v rocket from Kennedy Space Center on Merritt Island, Florida, on July 16 at 13:32 UTC, and it was the fifth crewed mission of NASAs Apollo program.'))
 </script>
 
 </body>
