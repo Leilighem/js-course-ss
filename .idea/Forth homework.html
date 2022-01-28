@@ -72,47 +72,58 @@
     }
 </script>
 
-<!--Task #3 - СЕЙЧАС ЛУЧШЕ НЕ ЗАПУСКАТЬ, БЕСКОНЕЧНЫЙ АЛЕРТ ПОЧЕМУ-ТО -->
+<!--Task #3 -->
 <script>
     class MonthException{
-        constructor(message) {
-            this.message = message;
+        constructor() {
+            this.monthList = [
+                'January',
+                'February',
+                'March',
+                'April',
+                'May',
+                'June',
+                'July',
+                'August',
+                'September',
+                'October',
+                'November',
+                'December',
+            ];
         }
 
-        get message() {
-            return this.message;
-        }
-
-        set message(value) {
-            if (value === 0 || value > 12) {
-                alert('Your number of month does not exist');
+        showMonthName(value) {
+            if (value < 1 || value > 12) {
                 throw new Error("The number of month does not exist");
                 return;
             }
-            else if (value > 0 && value <= 12){
-                var month = value;
-                var arr=[
-                    'January',
-                    'February',
-                    'March',
-                    'April',
-                    'May',
-                    'June',
-                    'July',
-                    'August',
-                    'September',
-                    'October',
-                    'November',
-                    'December',
-                ];
-                alert(arr[month-1]);
-                return;
+
+            else if (value = isNaN){
+                throw new Error("Value is not a number");
             }
 
-            this.message = value;
+            else if (value === "" || value === " " || value === null) {
+                throw new Error("Value is empty");
+            }
+
+            if (value > 0 && value <= 12){
+                let month = value;
+                alert(this.monthList[month-1]);
+                return;
+            }
         }
     }
-    let monthException = new MonthException("2");
+
+    try {
+        const monthException = new MonthException();
+        monthException.showMonthName("5")
+    }
+    catch(exception){
+        alert(exception);
+        console.log(exception.name);
+        console.log(exception.message);
+        console.log(exception.stack);
+    }
 
 </script>
 
