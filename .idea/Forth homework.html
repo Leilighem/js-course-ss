@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Forth task</title>
+</head>
+<body>
+<!--Third homework-->
+<!--Task #1-->
+
+<script>
+    function calcRectangleArea(a, b) {
+        let width = a;
+        let height = b;
+
+        let check1 = typeof width;
+        let check2 = typeof height;
+        //console.log(check1);
+        //console.log(check2);
+        if (check1 === 'number' && check2 === 'number') {
+            let s = width * height;
+            console.log("Your area was calcilated and it is  " + s);
+        }
+        else if (check1 != 'number' || check2 != 'number') {
+            throw new Error("You hadn't entered a number, please, check and add correct value");
+        }
+    }
+
+    calcRectangleArea(true, 6) // there will be an error "error" "Error: You hadn't entered a number, please, check and add correct value"
+
+</script>
+
+<!--Task #2-->
+
+<script>
+    function checkAge() {
+        let age = prompt ("Please, enter your age here", "18");
+        //console.log(age);
+
+
+        if (age === "" || age === " " || age === null) {
+            alert('You had enter nothing')
+            throw new Error("Value is empty");
+        }
+
+        let verifiedAge = parseInt(age);
+        //console.log(verifiedAge);
+
+
+        if (verifiedAge < 14) {
+            alert('Your age is ' + age + ', so you cannot watch this film')
+            throw new Error("User is too young");
+        } else if (verifiedAge >= 14) {
+            alert('Your age is ' + age + ', so you can watch this film')
+        } else if (verifiedAge = isNaN){
+            alert('You had enter incorrect value: it should be a number')
+            throw new Error("Value is not a number");
+        }
+
+        return verifiedAge;
+    }
+
+    try {
+        let result = checkAge();
+        console.log(result + " is the age of your user")
+
+    }
+    catch(exception){
+        console.log(exception.name);
+        console.log(exception.message);
+        console.log(exception.stack);
+    }
+</script>
+
+<!--Task #3 - СЕЙЧАС ЛУЧШЕ НЕ ЗАПУСКАТЬ, БЕСКОНЕЧНЫЙ АЛЕРТ ПОЧЕМУ-ТО -->
+<script>
+    class MonthException{
+        constructor(message) {
+            this.message = message;
+        }
+
+        get message() {
+            return this.message;
+        }
+
+        set message(value) {
+            if (value === 0 || value > 12) {
+                alert('Your number of month does not exist');
+                throw new Error("The number of month does not exist");
+                return;
+            }
+            else if (value > 0 && value <= 12){
+                var month = value;
+                var arr=[
+                    'January',
+                    'February',
+                    'March',
+                    'April',
+                    'May',
+                    'June',
+                    'July',
+                    'August',
+                    'September',
+                    'October',
+                    'November',
+                    'December',
+                ];
+                alert(arr[month-1]);
+                return;
+            }
+
+            this.message = value;
+        }
+    }
+    let monthException = new MonthException("2");
+
+</script>
+
+<!--Task #4-->
+<script>
+</script>
+
+</body>
+</html>
