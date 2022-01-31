@@ -9,26 +9,26 @@
 <!--Task #1-->
 
 <script>
-   const team = {
-       admin: 'Serhiy',
-       dev: 'Andriy',
-       pm: 'Liubov',
-       qa: 'Denis'
-   };
+    const team = {
+        admin: 'Serhiy',
+        dev: 'Andriy',
+        pm: 'Liubov',
+        qa: 'Denis'
+    };
 
-   const keys = Object.keys(team);
-   console.log(keys);
-   ["admin", "dev", "pm", "qa"]
-   Object.keys(team).forEach(key => {
-       let value = team[key];
-       //console.log(`${key}: ${value}`);
-   });
+    const keys = Object.keys(team);
+    console.log(keys);
+    ["admin", "dev", "pm", "qa"]
+    Object.keys(team).forEach(key => {
+        let value = team[key];
+        //console.log(`${key}: ${value}`);
+    });
 
-   function propsCount(team) {
-       const length = Object.keys(team).length;
-       console.log(length);
-   }
-   propsCount(team);
+    function propsCount(team) {
+        const lengthTeam = Object.keys(team).length;
+        return lengthTeam;
+    }
+    console.log(propsCount(team));
 </script>
 
 </body>
