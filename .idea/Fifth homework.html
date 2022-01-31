@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Fifth task</title>
+</head>
+<body>
+<!--Fifth homework-->
+<!--Task #1-->
+
+<script>
+   const team = {
+       admin: 'Serhiy',
+       dev: 'Andriy',
+       pm: 'Liubov',
+       qa: 'Denis'
+   };
+
+   const keys = Object.keys(team);
+   console.log(keys);
+   ["admin", "dev", "pm", "qa"]
+   Object.keys(team).forEach(key => {
+       let value = team[key];
+       console.log(`${key}: ${value}`);
+   });
+
+   function propsCount(team) {
+       const length = Object.keys(team).length;
+       console.log(length);
+   }
+   propsCount(team);
+</script>
+
+</body>
+</html>
