@@ -116,7 +116,7 @@
 
     try {
         const monthException = new MonthException();
-        monthException.showMonthName("5")
+        monthException.showMonthName("5");
     }
     catch(exception){
         alert(exception);
@@ -129,6 +129,39 @@
 
 <!--Task #4-->
 <script>
+    function showUser(id) {
+        if (id >= 0) {
+            console.log('Everything is fine');
+            return { id : id};
+        }
+
+        else if (id < 0) {
+            console.log('Your id ' + id + ' is negative');
+            throw new Error('Your id is negative');
+        }
+    }
+
+    showUser(0)
+
+    function showUsersIds(ids) {
+        let idsArr = [];
+        ids.forEach(function (id) {
+            try {
+                let users = showUser(id);
+                idsArr.push(users);
+            }
+            catch (exception) {
+                //alert(exception);
+                console.log(exception.name);
+                console.log(exception.message);
+                console.log(exception.stack);
+            }
+        });
+        console.log(idsArr)
+        return idsArr;
+    }
+
+    showUsersIds([7, 12, -44, 22]);
 </script>
 
 </body>
