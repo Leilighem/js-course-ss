@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sixth task</title>
+</head>
+<body>
+
+<!--Sixth homework-->
+<!--Task #1-->
+
+    <div id="test">First</div>
+    <div> Another div </div>
+    <script>
+        const a = document.getElementById('test');
+        a.innerHTML = 'Second';
+        document.getElementsByTagName('div'[1]);
+    </script>
+
+<!--Task #2-->
+
+    <img class="image" src="dog.jpg">
+    <script>
+        const image = document.getElementsByTagName('img')[0];
+        setTimeout(() => {
+            image.src = 'cat.jpg';
+            alert(image.src);
+        }, 4000)
+        console.dir(image);
+
+    </script>
+
+<!--Task #3-->
+
+<h2>Article header</h2>
+    <div id="text">
+        <p>First paragraph</p>
+        <p>Second paragraph</p>
+        <p>Third paragraph</p>
+    </div>
+    <p id = "newid">Another text</p>
+
+    <script>
+        let x = document.querySelectorAll("div#text");
+        //console.log(x[0].children[0].innerHTML);
+
+        const listP = x[0].children
+        console.log(listP.length)
+        for (let i = 0; i < listP.length; i++) {
+
+            console.log("Selector text " + i + " = " + listP[i].innerHTML);
+            //console.log(listP[i].innerHTML)
+            document.write("Selector text " + i + " = " + listP[i].innerHTML + "<br>");
+        }
+    </script>
+
+<!--Task #4-->
+
+    <ul id="list">
+        <li> 1 </li>
+        <li> 2 </li>
+        <li> 3 </li>
+        <li> 4 </li>
+        <li> 5 </li>
+    </ul>
+
+    <script>
+        let ulList = document.getElementById("list");
+        let liArray = ulList.getElementsByTagName("li");
+
+        //First method
+        alert(liArray[0].innerHTML + liArray[4].innerHTML + liArray[1].innerHTML + liArray[3].innerHTML + liArray[2].innerHTML);
+
+        //Second method
+        let alertText = "";
+        let elementsListsStyleArray = Array.from(liArray);
+        let reverseCount = elementsListsStyleArray.length - 1;
+        //console.log()
+        for (i = 0; i <= Math.trunc(elementsListsStyleArray.length / 2); i++) {
+            //console.log(elementsListsStyleArray.length)
+            console.log(i);
+            alertText += liArray[i].innerHTML;
+            if (reverseCount != i) {
+                console.log(reverseCount);
+                alertText += liArray[reverseCount].innerHTML;
+            }
+            reverseCount--;
+        }
+        alert(alertText);
+
+    </script>
+
+<!--Task #5-->
+
+    <h1>I'am a big header!!!</h1>
+    <div id="myDiv">
+        <p>First paragraph</p>
+        <p>Second paragraph</p>
+        <p>Third paragraph</p>
+        <p>Fourth paragraph</p>
+    </div>
+    <ul id="myList">
+        <li>Make</li>
+        <li>me</li>
+        <li>horizontal!</li>
+    </ul>
+    <span>Make me invisible, please!</span>
+
+    <script>
+        let coloredh1 = document.querySelector("body h1");
+        coloredh1.style.backgroundColor = '#00FF00'
+        console.dir(coloredh1);
+
+        let coloredp = document.querySelectorAll("body div p");
+        console.dir(coloredp[1]);
+        coloredp[0].style.fontWeight = 'bold';
+        coloredp[1].style.color = 'red';
+        coloredp[2].style.textDecoration = 'underline';
+        coloredp[3].style.fontStyle = 'italic';
+
+        let listStyle = document.getElementById("myList");
+        let elementsListStyle = listStyle.getElementsByTagName("li");
+        let elementsListsStyleArray = [...elementsListStyle].forEach((el) => {el.style.display = "inline"});
+
+        let spanStyle = document.querySelector("span");
+        spanStyle.style.display = "none"
+
+    </script>
+
+<!--Task #6-->
+
+    <input type="text" id="input1" value="Text1">
+    <input type="text" id="input2" value="Text2">
+
+    <script>
+        let firstInput = prompt('What should we put here for 1st?');
+        let secondInput = prompt('What should we put here for 2nd?');
+
+        document.getElementById("input1").value = firstInput;
+        document.getElementById("input2").value = secondInput;
+
+        console.log(document.getElementById("input1").value + document.getElementById("input2").value)
+
+        document.getElementById("input1").value = secondInput;
+        document.getElementById("input2").value = firstInput;
+
+        console.log(document.getElementById("input1").value + document.getElementById("input2").value)
+
+    </script>
+
+<!--Task 7-->
+
+<!--    <main class="mainClass check item">-->
+<!--        <div id="myDiv">-->
+<!--            <p>First paragraph</p>-->
+<!--        </div>-->
+<!--    </main>-->
+
+    <script>
+        const elMain = document.createElement("main");
+        const elDiv = document.createElement("div");
+        const elP = document.createElement("p");
+        const textForP = document.createTextNode("First paragraph");
+
+        elMain.classList.add("mainClass");
+        elMain.classList.add("check");
+        elMain.classList.add("item");
+        elDiv.id = "myDiv";
+
+        elP.appendChild(textForP);
+        elDiv.appendChild(elP);
+        elMain.appendChild(elDiv);
+        document.body.appendChild(elMain);
+    </script>
+
+
+
+</body>
+</html>
