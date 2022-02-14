@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Seventh task</title>
+</head>
+<body>
+
+<!--Seventh homework-->
+<!--Task #1-->
+
+<script>
+    let newWindow = window.open('', '', 'widht = 300, height = 300');
+    setTimeout(() => {
+        newWindow.resizeTo(500, 500);
+    }, 2000);
+    setTimeout(() => {
+        newWindow.moveTo(200, 200);
+    }, 2000)
+    setTimeout(() => {
+        newWindow.close();
+    }, 2000)
+</script>
+
+<!--Task #2-->
+
+    <p id = 'text'> I'm learning JS events! </p>
+    <div>
+        <button onclick = 'changeCSS()'> Change style!</button>
+    </div>
+
+    <script>
+        function changeCSS() {
+            text.style.color = '#FFBC00';
+            text.style.fontSize = '90pt';
+            text.style.fontFamily = 'Arial';
+        }
+    </script>
+
+<!--Task #3-->
+
+    <button onclick = 'setBackground("#0064C7")'> Make this page blue! </button>
+    <button ondblclick = 'setBackground("#C7008B")'> Make this page pink! </button>
+    <button onmousedown = 'setBackground("#553C2E")' onmouseup = 'setBackground("#FFFFFF")' >
+        Hold to make this page broun!
+    </button>
+    <a href = '#' onmouseover = 'setBackground("#FFD500")' onmouseout = 'setBackground("#FFFFFF")'>
+        Put the mouse over to make this page yellow!
+    </a>
+
+    <script>
+        function setBackground(colour) {
+            document.body.style.backgroundColor = colour;
+            console.log(colour)
+        }
+    </script>
+
+<!--Task #4-->
+
+    <form>
+        <select id = 'nameset'>
+            <option> Sherlok </option>
+            <option> John </option>
+            <option> Mrs. Hadson </option>
+            <option> Microft </option>
+            <option> Mary </option>
+            <option> Moriarty </option>
+            <option> Iren </option>
+        </select>
+        <input type = 'button' id = 'myBtn' value = 'Make your choice'>
+    </form>
+    <script>
+        function deleteColour() {
+            let x = document.getElementById("nameset");
+            x.remove(x.selectedIndex);
+        }
+
+        myBtn.addEventListener("click", deleteColour);
+    </script>
+
+<!--Task #5-->
+
+    <button id = 'liveButton'> Live Button </button>
+    <p id = 'myId'> </p>
+
+    <script>
+        let x = document.getElementById('liveButton');
+        x.addEventListener('mouseover', onMouseOverFunction);
+        x.addEventListener('click', mouseClickFunction);
+        x.addEventListener('mouseout', mouseOutFunction);
+
+        function onMouseOverFunction() {
+            document.getElementById('myId').innerHTML += 'Mouse on me! <br>';
+        }
+        function mouseClickFunction() {
+            document.getElementById('myId').innerHTML += 'I was pressed! <br>';
+        }
+        function mouseOutFunction() {
+            document.getElementById('myId').innerHTML += 'Mouse is not on me! <br>';
+        }
+    </script>
+
+<!--Task #6-->
+
+    <div id = z> </div>
+
+    <script>
+        function displayWindowsSize() {
+            let x = window.innerWidth;
+            let y = window.innerHeight;
+            let size = "Windth: " + x + ", Height: " + y;
+            document.getElementById('z').innerHTML = size;
+            window.location = window.location.href;
+        }
+        window.addEventListener('resize', displayWindowsSize());
+        setInterval('refreshPage()', 1000);
+    </script>
+
+<!--Task #7-->
+
+    <select name = 'country' id = 'country'>
+        <option value='germany'> Germany </option>
+        <option value='usa'> United States of America </option>
+        <option value='ukr'> Ukraine </option>
+    </select>
+
+    <select name = 'city' id = 'city'></select>
+
+    <p></p>
+
+    <script>
+        const cityCountriesarr = {
+            'germany': ['Berlin', 'Hamburg', 'Bremen', 'Stuttgart'],
+            'usa': ['New York', 'Los Angeles', 'Chicago', 'San Francisco'],
+            'ukr': ['Kyiv', 'Kharkiv', 'Lviv', 'Zaporizhzhia']
+        }
+
+        let countrySelect = document.getElementById('country');
+        countrySelect.addEventListener('change', realisation);
+
+        let citySelect = document.getElementById('city');
+        citySelect.addEventListener('change', printToPage)
+
+        function realisation(event) {
+            let citySelect = document.getElementById('city')
+            citySelect.innerHTML = '';
+            let selectedCountryValue = event.target.value;
+            for (let i = 0; i < cityCountriesarr[selectedCountryValue].length; i++) {
+                let newValue = document.createElement('option');
+                newValue.value = cityCountriesarr[selectedCountryValue][i];
+                newValue.innerHTML = cityCountriesarr[selectedCountryValue][i];
+                citySelect.appendChild(newValue);
+            }
+
+        }
+        let parag = document.querySelector('p');
+        function printToPage(event) {
+            let countrySelect = document.getElementById('country');
+
+            parag.innerHTML = '';
+            parag.innerHTML = event.target.options.item(event.target.options.selectedIndex).text
+                +' '+countrySelect.options[countrySelect.selectedIndex].text;
+            return parag;
+        }
+    </script>
+
+
+</body>
+</html>
