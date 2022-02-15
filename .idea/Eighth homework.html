@@ -80,7 +80,7 @@
 
     <script>
         function emailVerification(email) {
-            const setExceptions = /^\w+(-?\w+)*@\w+(-?\w+)*(\.w{2,3})+$/ ;
+            const setExceptions = /^([^-][-]{1}?[A-Za-z0-9_-]+@\w+\.\w+)/ ;
             if(setExceptions.test(email)){
                 console.log('Congratulations!')
             }
