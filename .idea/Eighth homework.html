@@ -80,17 +80,17 @@
 
     <script>
         function emailVerification(email) {
-            const setExceptions = /^([^-][-]{1}?[A-Za-z0-9_-]+@\w+\.\w+)/ ;
+            const setExceptions = /^([^-](?:[A-Za-z0-9_]*|(?:[A-Za-z0-9_]*(?:\-{1})[A-Za-z0-9_]*))@\w+\.\w+)/ ;
             if(setExceptions.test(email)){
-                console.log('Congratulations!')
+                console.log(`Congratulations! Your ${email} is correct!`)
             }
             else {
-                console.log('Please, check your e-mail, you cannot use that one')
+                console.log(`Please, check your e-mail, you cannot use that one ${email}`)
             }
         }
 
         emailVerification('my_mail@gmail.com');
-        emailVerification('#my_mail@gmail.c_m');
+        emailVerification('-my_mail-@gmail.c_m');
 
 
     </script>
