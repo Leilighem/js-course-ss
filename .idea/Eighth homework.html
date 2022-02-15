@@ -10,71 +10,71 @@
 <!--Eighth homework-->
 <!--Task #1-->
 
-<!--    <script>-->
-<!--        function upperCase(str) {-->
-<!--            regexp = /^[A-Z]/;-->
-<!--            if (regexp.test(str)){-->
-<!--                console.log("String starts from the capital letter");-->
-<!--            }-->
-<!--            else {-->
-<!--                console.log("String do not starts from the capital letter");-->
-<!--            }-->
-<!--        }-->
+    <script>
+        function upperCase(str) {
+            regexp = /^[A-Z]/;
+            if (regexp.test(str)){
+                console.log("String starts from the capital letter");
+            }
+            else {
+                console.log("String do not starts from the capital letter");
+            }
+        }
 
-<!--        upperCase('regexp');-->
-<!--        upperCase('RegExp');-->
+        upperCase('regexp');
+        upperCase('RegExp');
 
-<!--    </script>-->
+    </script>
 
 <!--Task #2-->
 
-<!--    <script>-->
-<!--        function checkEmail(email) {-->
-<!--            const regexp = /\S+@\S+\.\S+/;-->
-<!--            console.log(regexp.test(email));-->
-<!--        }-->
+    <script>
+        function checkEmail(email) {
+            const regexp = /\S+@\S+\.\S+/;
+            console.log(regexp.test(email));
+        }
 
-<!--        checkEmail("SomeMail@mail.com");-->
-<!--    </script>-->
+        checkEmail("SomeMail@mail.com");
+    </script>
 
 <!--Task #3-->
 
-<!--    <h2 class="head">header1</h2>-->
-<!--    <h2 class="head">header2 <span class="inner">inner elem1</span></h2>-->
-<!--    <h2>header3</h2>-->
-<!--    <h2 class="head">header4<span>inner elem2</span></h2>-->
-<!--    <h2>header5</h2>-->
+    <h2 class="head">header1</h2>
+    <h2 class="head">header2 <span class="inner">inner elem1</span></h2>
+    <h2>header3</h2>
+    <h2 class="head">header4<span>inner elem2</span></h2>
+    <h2>header5</h2>
 
-<!--<script>-->
-<!--    $('h2.head').css('background', 'green').find('.inner').css('fontSize','35px');-->
-<!--</script>-->
+<script>
+    $('h2.head').css('background', 'green').find('.inner').css('fontSize','35px');
+</script>
 
 <!--Task #4-->
 
-<!--    <input type = 'checkbox'>-->
-<!--    <input type = 'checkbox'>-->
-<!--    <input type = 'checkbox'>-->
-<!--    <input type = 'checkbox'>-->
-<!--    <input type = 'checkbox'>-->
-<!--    <input type = 'checkbox'>-->
+    <input type = 'checkbox'>
+    <input type = 'checkbox'>
+    <input type = 'checkbox'>
+    <input type = 'checkbox'>
+    <input type = 'checkbox'>
+    <input type = 'checkbox'>
 
-<!--    <script>-->
-<!--        const $checkboxes = $(':checkbox');-->
-<!--        $checkboxes.on('click', () => {-->
-<!--            if ($(':checkbox:checked').length == 3) {-->
-<!--                $checkboxes.attr('disabled', 'true');-->
-<!--            }-->
-<!--        })-->
-<!--    </script>-->
+    <script>
+        const $checkboxes = $(':checkbox');
+        $checkboxes.on('click', () => {
+            if ($(':checkbox:checked').length == 3) {
+                $checkboxes.attr('disabled', 'true');
+            }
+        })
+    </script>
 
 <!--Task #5-->
 
-<!--    <script>-->
-<!--        const re = /(\w+)\s(\w+)/;-->
-<!--        const spell = "Avada Kedavra";-->
-<!--        const change = spell.replace(re, "$2, S1");-->
-<!--        console.log(change);-->
-<!--    </script>-->
+    <script>
+        const re = /(\w+)\s(\w+)/;
+        const spell = "Avada Kedavra";
+        const change = spell.replace(re, "$2, S1");
+        console.log(change);
+    </script>
 
 <!--Task #6-->
 
@@ -97,21 +97,21 @@
 
 <!--Task #7-->
 
-<!--    <script>-->
-<!--        function verifyLogin(login) {-->
-<!--            const check = /^[a-zA-z]{1}[a-zA-Z0-9\.]{1,9}$/;-->
-<!--            const checkNum = /[0-9\.]+/g;-->
-<!--            const numResult = login.match(checkNum);-->
-<!--            const result = check.test(login);-->
-<!--            console.log(`${login} is ${result} - ${numResult}`);-->
-<!--        }-->
+    <script>
+        function verifyLogin(login) {
+            const check = /^[a-zA-z]{1}[a-zA-Z0-9\.]{1,9}$/;
+            const checkNum = /[0-9\.]+/g;
+            const numResult = login.match(checkNum);
+            const result = check.test(login);
+            console.log(`${login} is ${result} - ${numResult}`);
+        }
 
-<!--        //verifyLogin('wer1e19drt');-->
-<!--        //verifyLogin('4r3st4.4s');-->
-<!--        //verifyLogin('1.1e1ret3');-->
-<!--        verifyLogin('1.566.551.315s.dfe.sfs.s');-->
+        //verifyLogin('wer1e19drt');
+        //verifyLogin('4r3st4.4s');
+        //verifyLogin('1.1e1ret3');
+        verifyLogin('1.566.551.315s.dfe.sfs.s');
 
-<!--    </script>-->
+    </script>
 
 </body>
 </html>
