@@ -53,35 +53,56 @@
         console.log(mul(null, "str", false, true)); // 0
     </script>
 
-<!--Task #4 IS NOT READY-->
+<!--Task #4 DID THAT MYSELF! =) -->
 
-<!--    <script>-->
-<!--        let server = {-->
-<!--            data: 0,-->
-<!--            convertToString (callback) => {-->
-<!--                callback((function () {-->
-<!--                    return this.data + "";-->
-<!--                }).bind(this));-->
-<!--            }-->
-<!--        };-->
-<!--        let client = {-->
-<!--            server: server,-->
-<!--            result: "",-->
-<!--            calc: function (data) {-->
-<!--                this.server.data = data;-->
-<!--                this.server.convertToString(this.notification());-->
-<!--            },-->
-<!--            notification: function () {-->
-<!--                return (function (callback) {-->
-<!--                    this.result = callback();-->
-<!--                }).bind(this);-->
-<!--            }-->
-<!--        };-->
-<!--        client.calc(123);-->
-<!--        console.log(client.result); // "123"-->
-<!--        console.log(typeof client.result); // "string"-->
+    <script>
+        let server = {
+            data: 0,
+            convertToString: function (callback) {
+                callback(() => {
+                    return this.data + "";
+                });
+            }
+        };
+        let client = {
+            server: server,
+            result: "",
+            calc: function (data) {
+                this.server.data = data;
+                this.server.convertToString(this.notification());
+            },
+            notification: function () {
+                return (callback => {
+                    this.result = callback();
+                });
+            }
+        };
+        client.calc(123);
+        console.log(client.result); // "123"
+        console.log(typeof client.result); // "string"
 
-<!--    </script>-->
+
+    </script>
+
+<!--Task #5 -->
+
+    <script>
+        let keys = [10, 20, 30, 40];
+        let values = ["div", "span", "b", "i"];
+
+        function mapBuilder (keys, values) {
+            const map = new Map();
+
+            for (let i = 0; i < keys.length; i++) {
+                map.set(keys[i], values[i]);
+            }
+            return map;
+        }
+
+        const map = mapBuilder(keys, values)
+        console.log(map.size); // 4
+        console.log(map.get(20)); // "span"
+    </script>
 
 </body>
 </html>
