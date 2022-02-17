@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tenth task</title>
+</head>
+<body>
+
+<!--Tenth homework-->
+<!--Task #1-->
+
+    <script>
+        function getPromise(message, delay) {
+            const promise = new Promise(function (resolve, reject) {
+                setTimeout(function() {
+                    resolve(message);
+                }, delay);
+            });
+            return promise;
+        };
+
+        getPromise("test promise", 2000).then(function(data) {
+            console.log(data);
+        });
+    </script>
+
+<!--Task #2 NOT READY: THE PROBLEM IS IN THE ARR.FOREACH-->
+
+    <script>
+        function calcArrProduct(arr) {
+            let calc = 1;
+            let isNumberFound = false;
+            let result;
+            arr.forEach ((someValue) => {
+                if (typeof someValue != 'number') {
+                    calc = someVar * calc;
+                    isNumberFound = false;
+                };
+            })
+
+            const promise = new Promise(function (resolve, reject) {
+                {
+                    if (isNumberFound === true) {
+                         resolve(calc);
+                        }
+                    else {
+                        const notNumber = new Error('Error! Incorrect array!');
+                        reject(notNumber);
+                        };
+                    };
+                });
+
+            return promise;
+
+        }
+
+        calcArrProduct([3,4,5]).then(result => console.log(result)); // 60
+        calcArrProduct([5,"user2", 7, 12]).then(result => console.log(result));
+        // "Error! Incorrect array!"
+
+    </script>
+
+<!--Task #3-->
+
+    <script>
+
+    </script>
+
+<!--Task #3-->
+
+    <script>
+
+    </script>
+
+</body>
+</html>
